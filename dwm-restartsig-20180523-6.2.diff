@@ -34,7 +34,7 @@ index a9ac303..e559429 100644
  	TAGKEYS(                        XK_8,                      7)
  	TAGKEYS(                        XK_9,                      8)
  	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
-+	{ MODKEY|ControlMask|ShiftMask, XK_q,      quit,           {1} }, 
++	{ MODKEY|ControlMask|ShiftMask, XK_q,      quit,           {1} },
  };
  
  /* button definitions */
@@ -126,8 +126,8 @@ index bb95e26..286eecd 100644
  spawn(const Arg *arg)
  {
  	if (arg->v == dmenucmd)
-@@ -2139,6 +2160,7 @@ main(int argc, char *argv[])
- 	setup();
+@@ -2143,6 +2160,7 @@ main(int argc, char *argv[])
+ #endif /* __OpenBSD__ */
  	scan();
  	run();
 +	if(restart) execvp(argv[0], argv);
